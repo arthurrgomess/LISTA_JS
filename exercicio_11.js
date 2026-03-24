@@ -1,31 +1,21 @@
-function folhaDescontoVariavel(){
+function ex11() {
 
-    let salario_liquido;
-    let desconto;
-    let taxaDesconto;
+    let salario = Number(prompt("Digite o salário:"));
+    let taxa = 0;
 
-    let nome = prompt("Informe o nome do Funcionário");
-    let salario_bruto = parseFloat(prompt("Informe o salário bruto: "));
-
-    if(salario_bruto < 1000.01) {
-        desconto = salario_bruto * 0.08;
-        taxaDesconto = 0.08;
-    } else if(salario_bruto < 1500.01){
-        desconto = salario_bruto * 0.085;
-        taxaDesconto = 0.085;
+    if (salario <= 1000) {
+        taxa = 0.08;
+    } else if (salario <= 1500) {
+        taxa = 0.085;
     } else {
-        desconto = salario_bruto * 0.09;
-        taxaDesconto = 0.09;
-    };
+        taxa = 0.09;
+    }
 
-    salario_liquido = (salario_bruto - desconto);
+    let desconto = salario * taxa;
+    let liquido = salario - desconto;
 
-    console.log("Nome: " + nome);
-    console.log("Salário sem desconto: " + salario_bruto);
-    console.log("Taxa de Desconto: " + taxaDesconto);
-    console.log("Valor do Desconto: " + desconto);
-    console.log("Salário Líquido: " + salario_liquido);
-
-};
-
-folhaDescontoVariavel()
+    console.log("Salário: " + salario);
+    console.log("Taxa: " + (taxa * 100) + "%");
+    console.log("Desconto: " + desconto);
+    console.log("Salário líquido: " + liquido);
+}
