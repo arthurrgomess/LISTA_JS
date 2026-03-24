@@ -22,4 +22,3 @@ function somarNumeros() {
  
 }
 
-somarNumeros();
